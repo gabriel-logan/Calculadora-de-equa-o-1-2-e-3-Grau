@@ -1,0 +1,47 @@
+body{
+    div{
+        h1{
+            text-align: center;
+            margin-block: 15px;
+        }
+        .calculadora{
+            width: 80%;
+            min-height: 600px;
+            max-height: min-content;
+            margin: auto;
+            background-color: rgb(92, 102, 156);
+            border-radius: 15px;
+            form{
+                margin-top: 35px;
+                width: 80%;
+                margin: auto;
+                label{
+                    margin-top: 15px;
+                    color: white;
+                    text-shadow: 1px 1px 1px black;
+                    font-weight: bold;
+                }
+                button{
+                    margin-top: 15px;
+                }
+            }
+            div{
+                h2{
+                    text-align: center;
+                    margin-top: 15px;
+                    color: white;
+                    text-shadow: 1px 1px 1px black;
+                    margin-inline: 10px;
+                    margin-bottom: 25px;
+                }
+            }
+        }
+    }
+}
+.exemplos{
+    color: white;
+    margin-bottom: 0px;
+}
+button{
+    cursor: pointer;
+}

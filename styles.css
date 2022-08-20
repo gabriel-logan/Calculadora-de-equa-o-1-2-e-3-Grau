@@ -1,0 +1,51 @@
+body div h1 {
+  text-align: center;
+  margin-block: 15px;
+}
+
+body div .calculadora {
+  width: 80%;
+  min-height: 600px;
+  max-height: -webkit-min-content;
+  max-height: -moz-min-content;
+  max-height: min-content;
+  margin: auto;
+  background-color: #5c669c;
+  border-radius: 15px;
+}
+
+body div .calculadora form {
+  margin-top: 35px;
+  width: 80%;
+  margin: auto;
+}
+
+body div .calculadora form label {
+  margin-top: 15px;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  font-weight: bold;
+}
+
+body div .calculadora form button {
+  margin-top: 15px;
+}
+
+body div .calculadora div h2 {
+  text-align: center;
+  margin-top: 15px;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  margin-inline: 10px;
+  margin-bottom: 25px;
+}
+
+.exemplos {
+  color: white;
+  margin-bottom: 0px;
+}
+
+button {
+  cursor: pointer;
+}
+/*# sourceMappingURL=styles.css.map */

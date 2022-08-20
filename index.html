@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de raizes</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./bootstrap.min.css">
+</head>
+<body>
+    <button id="refresh">Atualizar pagina se travar</button>
+    <div>
+        <h1>Calculadora de raizes</h1>
+        <div class="calculadora">
+            <div>
+                <Select id="seleciona_calc" class="form-control" >
+                    <option value="0">Escolha a calculadora</option>
+                    <option value="1">Calculadora de primeiro grau</option>
+                    <option value="2">Calculadora de segundo grau</option>
+                    <option value="3">Calculadora de terceiro grau</option>
+                </Select>
+            </div>
+            <form id="primeiro_grau" action="">
+                <label for="">Valor A</label>
+                <p class="exemplos">Ex: 2x = ValorA = 2</p>
+                <input id="primeiro_valorA" class="form-control" inputmode="numeric" type="text">
+                <label for="">Valor B</label>
+                <p class="exemplos">Ex: -5</p>
+                <input id="primeiro_valorB" class="form-control" inputmode="numeric" type="text">
+                <button id="btn_primeiro" class="btn btn-primary">Calcular</button>
+            </form>
+            <form id="segundo_grau" action="">
+                <label for="">Valor A</label>
+                <p class="exemplos">Ex: 2x² = ValorA = 2</p>
+                <input id="segundo_valorA" class="form-control" inputmode="numeric" type="text">
+                <label for="">Valor B</label>
+                <p class="exemplos">Ex: -3x = ValorB = -3</p>
+                <input id="segundo_valorB" class="form-control" inputmode="numeric" type="text">
+                <label for="">Valor C</label>
+                <p class="exemplos">Ex: 2 = ValorC = 2</p>
+                <input id="segundo_valorC" class="form-control" inputmode="numeric" type="text">
+                <button id="btn_segundo"  class="btn btn-primary">Calcular</button>
+            </form>
+            <form id="terceiro_grau" action="">
+                <label for="">Valor A</label>
+                <p class="exemplos">Ex: x³ = ValorA = 1</p>
+                <input id="terceiro_valorA" class="form-control" inputmode="numeric" type="text">
+                <label for="">Valor B</label>
+                <p class="exemplos">Ex: -2x² = ValorB = -2</p>
+                <input id="terceiro_valorB" class="form-control" inputmode="numeric" type="text">
+                <label for="">Valor C</label>
+                <p class="exemplos">Ex: 2x = ValorC = 2</p>
+                <input id="terceiro_valorC" class="form-control" inputmode="numeric" type="text">
+                <label for="">Valor D</label>
+                <p class="exemplos">Ex: -3 = ValorD = -3</p>
+                <input id="terceiro_valorD" class="form-control" inputmode="numeric" type="text">
+                <button id="btn_terceiro"  class="btn btn-primary">Calcular</button>
+            </form>
+            <div>
+                <h2 id="resposta">Resposta...</h2>
+            </div>
+        </div>
+    </div>
+    <p>Desenvolvido por Gabriel Logan</p>
+    <script  src="script.js"></script>
+</body>
+</html>
