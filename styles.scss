@@ -35,6 +35,16 @@ body{
                     margin-bottom: 25px;
                 }
             }
+            @media (max-width: 450px) {
+                h2{
+                    font-size: 160%;
+                }
+            }
+            @media (max-width: 350px) {
+                h2{
+                    font-size: 100%;
+                }
+            }
         }
     }
 }
@@ -44,4 +54,8 @@ body{
 }
 button{
     cursor: pointer;
+}
+
+#perguntaSeQuerAproximar{
+    text-align: center;
 }

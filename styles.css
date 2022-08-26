@@ -40,6 +40,18 @@ body div .calculadora div h2 {
   margin-bottom: 25px;
 }
 
+@media (max-width: 450px) {
+  body div .calculadora h2 {
+    font-size: 160%;
+  }
+}
+
+@media (max-width: 350px) {
+  body div .calculadora h2 {
+    font-size: 100%;
+  }
+}
+
 .exemplos {
   color: white;
   margin-bottom: 0px;
@@ -47,5 +59,9 @@ body div .calculadora div h2 {
 
 button {
   cursor: pointer;
+}
+
+#perguntaSeQuerAproximar {
+  text-align: center;
 }
 /*# sourceMappingURL=styles.css.map */
