@@ -8,7 +8,12 @@ class CalculadoraDeRaizes{
         this.terceiroGrau = document.querySelector('#terceiro_grau');
     }
 
+    limpaResposta(){
+        this.resposta.innerText = ''
+    }
+
     init(){
+
         this.refresh.addEventListener('click', e=>{
             window.location.reload()
         })
@@ -59,6 +64,11 @@ class CalculadoraDeRaizes{
 
         if(valorA == '' || valorB == ''){
             resposta.innerText = 'Caso não tenha o coeficiente utilize 0 como valor'
+            return
+        }
+
+        if(valorA == 0){
+            resposta.innerText = 'O valor de A não pode ser 0, pois isso gera um resultado indeterminado'
             return
         }
 
@@ -203,15 +213,15 @@ class CalculadoraDeRaizes{
 
                 if(resposta1 > resposta2){
                     if((Number(resposta1) - Number(resposta2)) > 1){
-                        var pontoCritico3 = geraIntervaloPontoCritico(Math.ceil(Number(resposta2)), Number(resposta1))
+                        var pontoCritico3 = geraIntervaloPontoCritico(Math.ceil(Number(resposta2) + 0.2), Number(resposta1))
                     }else{
-                        var pontoCritico3 = geraIntervaloPontoCritico((Number(resposta2)),Number(resposta1))
+                        var pontoCritico3 = geraIntervaloPontoCritico((Number(resposta2) + 0.2),Number(resposta1))
                     }
                 }else{
                     if((Number(resposta2) - Number(resposta1)) > 1){
-                        var pontoCritico3 = geraIntervaloPontoCritico(Math.ceil(Number(resposta1)) ,Number(resposta2))
+                        var pontoCritico3 = geraIntervaloPontoCritico(Math.ceil(Number(resposta1) + 0.2) ,Number(resposta2))
                     }else{
-                        var pontoCritico3 = geraIntervaloPontoCritico((Number(resposta1)),Number(resposta2))
+                        var pontoCritico3 = geraIntervaloPontoCritico((Number(resposta1) + 0.2),Number(resposta2))
                     }
                 }
 
@@ -246,6 +256,10 @@ class CalculadoraDeRaizes{
 
                 if(primeiraRaizCritica[0].toFixed(7) == primeiraRaizCritica[1].toFixed(7)){
                     resposta.innerText = (`Possui apenas 1 raiz real em X = ${primeiraRaizCritica[0].toFixed(4)}`)
+                }else if(primeiraRaizCritica[0].toFixed(4) == primeiraRaizCritica[2].toFixed(4)){
+                    metodoDeNewton()
+                }else if(primeiraRaizCritica[1].toFixed(4) == primeiraRaizCritica[2].toFixed(4)){
+                    metodoDeNewton()
                 }else{
                     resposta.innerText = (`X1 ≅ ${primeiraRaizCritica[0].toFixed(4)}, X2 ≅ ${primeiraRaizCritica[1].toFixed(4)}, X3 ≅ ${primeiraRaizCritica[2].toFixed(4)}`)
                 }
@@ -330,6 +344,10 @@ class CalculadoraDeRaizesSemAproximar{
         this.terceiroGrau = document.querySelector('#terceiro_grau');
     }
 
+    limpaResposta(){
+        this.resposta.innerText = ''
+    }
+
     init(){
         this.refresh.addEventListener('click', e=>{
             window.location.reload()
@@ -375,6 +393,10 @@ class CalculadoraDeRaizesSemAproximar{
 
         if(valorA == '' || valorB == ''){
             resposta.innerText = 'Caso não tenha o coeficiente utilize 0 como valor'
+            return
+        }
+        if(valorA == 0){
+            resposta.innerText = 'O valor de A não pode ser 0, pois isso gera um resultado indeterminado'
             return
         }
 
@@ -519,13 +541,13 @@ class CalculadoraDeRaizesSemAproximar{
 
                 if(resposta1 > resposta2){
                     if((Number(resposta1) - Number(resposta2)) > 1){
-                        var pontoCritico3 = geraIntervaloPontoCritico(Math.ceil(Number(resposta2)), Number(resposta1))
+                        var pontoCritico3 = geraIntervaloPontoCritico(Math.ceil(Number(resposta2) + 0.2), Number(resposta1))
                     }else{
                         var pontoCritico3 = geraIntervaloPontoCritico((Number(resposta2) + 0.2),Number(resposta1))
                     }
                 }else{
                     if((Number(resposta2) - Number(resposta1)) > 1){
-                        var pontoCritico3 = geraIntervaloPontoCritico(Math.ceil(Number(resposta1)) ,Number(resposta2))
+                        var pontoCritico3 = geraIntervaloPontoCritico(Math.ceil(Number(resposta1) + 0.2) ,Number(resposta2))
                     }else{
                         var pontoCritico3 = geraIntervaloPontoCritico((Number(resposta1) + 0.2),Number(resposta2))
                     }
@@ -562,6 +584,10 @@ class CalculadoraDeRaizesSemAproximar{
 
                 if(primeiraRaizCritica[0].toFixed(7) == primeiraRaizCritica[1].toFixed(7)){
                     resposta.innerText = (`Possui apenas 1 raiz real em X = ${primeiraRaizCritica[0]}`)
+                }else if(primeiraRaizCritica[0].toFixed(4) == primeiraRaizCritica[2].toFixed(4)){
+                    metodoDeNewton()
+                }else if(primeiraRaizCritica[1].toFixed(4) == primeiraRaizCritica[2].toFixed(4)){
+                    metodoDeNewton()
                 }else{
                     resposta.innerText = (`X1 ≅ ${primeiraRaizCritica[0]}, X2 ≅ ${primeiraRaizCritica[1]}, X3 ≅ ${primeiraRaizCritica[2]}`)
                 }
@@ -639,27 +665,18 @@ class CalculadoraDeRaizesSemAproximar{
 const calc = new CalculadoraDeRaizes();
 const calcSemAproximar = new CalculadoraDeRaizesSemAproximar();
 
-const divChecked = document.querySelector('#perguntaSeQuerAproximar')
-
 const checkedSim = document.querySelector('#sim')
 const checkedNao = document.querySelector('#nao')
 
 if(checkedSim.checked){
     calc.init()
 }
-if(checkedNao.checked){
+
+checkedSim.addEventListener('click', e=>{
+    console.log('Checado')
+    calc.init()
+})
+checkedNao.addEventListener('click', e=>{
+    console.log('Checado2')
     calcSemAproximar.init()
-}
-
-divChecked.addEventListener('change', e=>{
-    e.preventDefault()
-    if(checkedSim.checked){
-        console.log('checado')
-        calc.init()
-    }
-    if(checkedNao.checked){
-        console.log('checado2')
-
-        calcSemAproximar.init()
-    }
 })
