@@ -197,10 +197,22 @@ class CalculadoraDeRaizes{
                     pontoCritico1 = pontoCritico2*(-1)
                 }
 
+                function geraIntervaloPontoCritico(min, max){
+                    return Math.random() * (max - min + 1) + min
+                }
+
                 if(resposta1 > resposta2){
-                    var pontoCritico3 = resposta1/resposta2
+                    if((Number(resposta1) - Number(resposta2)) > 1){
+                        var pontoCritico3 = geraIntervaloPontoCritico(Math.ceil(Number(resposta2)), Number(resposta1))
+                    }else{
+                        var pontoCritico3 = geraIntervaloPontoCritico((Number(resposta2)),Number(resposta1))
+                    }
                 }else{
-                    var pontoCritico3 = resposta2/resposta1
+                    if((Number(resposta2) - Number(resposta1)) > 1){
+                        var pontoCritico3 = geraIntervaloPontoCritico(Math.ceil(Number(resposta1)) ,Number(resposta2))
+                    }else{
+                        var pontoCritico3 = geraIntervaloPontoCritico((Number(resposta1)),Number(resposta2))
+                    }
                 }
 
                 if(delta < 0){
@@ -501,10 +513,22 @@ class CalculadoraDeRaizesSemAproximar{
                     pontoCritico1 = pontoCritico2*(-1)
                 }
 
+                function geraIntervaloPontoCritico(min, max){
+                    return Math.random() * (max - min + 1) + min
+                }
+
                 if(resposta1 > resposta2){
-                    var pontoCritico3 = resposta1/resposta2
+                    if((Number(resposta1) - Number(resposta2)) > 1){
+                        var pontoCritico3 = geraIntervaloPontoCritico(Math.ceil(Number(resposta2)), Number(resposta1))
+                    }else{
+                        var pontoCritico3 = geraIntervaloPontoCritico((Number(resposta2) + 0.2),Number(resposta1))
+                    }
                 }else{
-                    var pontoCritico3 = resposta2/resposta1
+                    if((Number(resposta2) - Number(resposta1)) > 1){
+                        var pontoCritico3 = geraIntervaloPontoCritico(Math.ceil(Number(resposta1)) ,Number(resposta2))
+                    }else{
+                        var pontoCritico3 = geraIntervaloPontoCritico((Number(resposta1) + 0.2),Number(resposta2))
+                    }
                 }
 
                 if(delta < 0){
